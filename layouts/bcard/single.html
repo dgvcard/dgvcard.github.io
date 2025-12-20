@@ -1,0 +1,89 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/assets/css/bootstrap.rtl.min.css">
+
+<div class="container py-4" style="max-width: 420px;">
+  <div class="card shadow-sm border-0">
+
+    <!-- Header -->
+    <div class="card-body text-center border-bottom">
+      <h5 class="mb-1">{{ .Params.name }}</h5>
+      <small class="text-muted">{{ .Params.title }}</small>
+    </div>
+
+    <!-- Contact links -->
+    <div class="card-body">
+
+      {{ with .Params.phone }}
+      <a href="tel:{{ . }}" class="btn btn-outline-dark w-100 mb-2">
+        📞 {{ . }}
+      </a>
+      {{ end }}
+
+      {{ with .Params.whatsapp }}
+      <a href="https://wa.me/{{ . }}" class="btn btn-outline-success w-100 mb-2">
+        واتساپ
+      </a>
+      {{ end }}
+
+      {{ with .Params.instagram }}
+      <a href="https://instagram.com/{{ . }}" class="btn btn-outline-danger w-100 mb-2">
+        اینستاگرام
+      </a>
+      {{ end }}
+
+      {{ with .Params.telegram }}
+      <a href="https://t.me/{{ . }}" class="btn btn-outline-primary w-100 mb-2">
+        تلگرام
+      </a>
+      {{ end }}
+
+    </div>
+
+    <!-- Payment info -->
+    {{ if or .Params.card_number .Params.sheba }}
+    <div class="card-body border-top small">
+
+      {{ with .Params.card_number }}
+      <div class="mb-2">
+        <strong>شماره کارت:</strong><br>
+        <span dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+
+      {{ with .Params.sheba }}
+      <div>
+        <strong>شماره شبا:</strong><br>
+        <span dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+
+    </div>
+    {{ end }}
+
+    <!-- Description -->
+    {{ with .Params.description }}
+    <div class="card-body border-top">
+      <p class="mb-0 small text-muted">
+        {{ . }}
+      </p>
+    </div>
+    {{ end }}
+
+    <!-- Download -->
+    <div class="card-body border-top text-center">
+      <button class="btn btn-dark w-100" onclick="downloadCard()">
+        دانلود کارت
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function downloadCard() {
+  alert("در نسخه بعدی فعال می‌شود");
+}
+</script>
+{{ end }}

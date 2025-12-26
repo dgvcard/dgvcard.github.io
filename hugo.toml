@@ -2,3 +2,7 @@ baseURL = 'https://pioush-chap.ir/'
 languageCode = 'fa-ir'
 title = 'My New Hugo Site'
 theme = 'papermod'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

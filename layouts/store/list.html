@@ -1,0 +1,9 @@
+<h1>فروشگاه‌ها</h1>
+
+{{ range .Pages }}
+  <div>
+    <a href="{{ .RelPermalink }}">
+      {{ .Params.name }}
+    </a>
+  </div>
+{{ end }}

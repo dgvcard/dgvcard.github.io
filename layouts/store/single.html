@@ -5,8 +5,8 @@
 
     <!-- Header -->
     <div class="card-body text-center border-bottom">
-      <h5 class="mb-1">{{ .Params.name }}</h5>
-      <small class="text-muted">{{ .Params.title }}</small>
+      <h5 class="mb-1">{{ .Params.title }}</h5>
+      <small class="text-muted">{{ .Params.description }}</small>
     </div>
 
     <!-- Contact links -->
@@ -43,7 +43,7 @@
 
     <!-- Download -->
     <div class="card-body border-top text-center">
-      <a class="btn btn-success w-100" href="/pictures/bitmap.jpg" download="{{ .Params.name }}.jpg">
+      <a class="btn btn-success w-100" href="card.jpg" download="{{ .Params.title }}.jpg">
         دریافت کارت ویزیت
       </a>
     </div>
@@ -66,15 +66,6 @@
       </div>
       {{ end }}
 
-    </div>
-    {{ end }}
-
-    <!-- Description -->
-    {{ with .Params.description }}
-    <div class="card-body border-top">
-      <p class="mb-0 small text-muted">
-        {{ . }}
-      </p>
     </div>
     {{ end }}
 

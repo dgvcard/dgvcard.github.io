@@ -1,6 +1,6 @@
-baseURL = 'https://pioush-chap.ir/'
+baseURL = 'https://dgvcard.github.io/'
 languageCode = 'fa-ir'
-title = 'My New Hugo Site'
+title = 'کارت ویزیت دیجیتال'
 theme = 'papermod'
 
 [caches]

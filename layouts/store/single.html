@@ -12,7 +12,12 @@
     <!-- Contact links -->
     <div class="card-body">
 
-      {{ with .Params.phone }}
+      {{ with .Params.mobile }}
+      <a dir="ltr" href="tel:{{ . }}" class="btn btn-outline-dark w-100 mb-2">
+        📞 {{ . }}
+      </a>
+      {{ end }}
+            {{ with .Params.phone }}
       <a dir="ltr" href="tel:{{ . }}" class="btn btn-outline-dark w-100 mb-2">
         📞 {{ . }}
       </a>
@@ -49,12 +54,42 @@
     </div>
 
     <!-- Payment info -->
-    {{ if or .Params.card_number .Params.sheba }}
+    {{ if or .Params.card_number .Params.sheba .Params.card_number1 }}
     <div class="card-body border-top small">
 
       {{ with .Params.card_number }}
       <div class="mb-2">
         <strong>شماره کارت:</strong><br>
+        <span class="card_number" dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.card_number1 }}
+      <div class="mb-2">
+        <strong>شماره کارت ۱:</strong><br>
+        <span class="card_number" dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.card_number2 }}
+      <div class="mb-2">
+        <strong>شماره کارت ۲:</strong><br>
+        <span class="card_number" dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.card_number3 }}
+      <div class="mb-2">
+        <strong>شماره کارت ۳:</strong><br>
+        <span class="card_number" dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.card_number4 }}
+      <div class="mb-2">
+        <strong>شماره کارت ۴:</strong><br>
+        <span class="card_number" dir="ltr">{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with .Params.card_number5 }}
+      <div class="mb-2">
+        <strong>شماره کارت ۵:</strong><br>
         <span class="card_number" dir="ltr">{{ . }}</span>
       </div>
       {{ end }}

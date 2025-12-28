@@ -3,6 +3,6 @@
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
 {{- /* Head custom content area end */ -}}
 {{- block "head_links" . }}{{ end }}
-<link rel="stylesheet" href="/assets/css/bootstrap.rtl.min.css">
+{{ with .Params.bootstrap_theme }}<link rel="stylesheet" href="/assets/css/bootstrap.rtl.min-{{ . }}.css">{{ end }}
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/custom_fonts.css">
